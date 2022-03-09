@@ -23,4 +23,5 @@ func Routers() {
 	R.POST("/register", controler.Register)
 	R.POST("/login", controler.Login)
 	R.GET("/protected", util.Auth(),protectedRoute)
+	R.GET("/logout", controler.Logout)
 }

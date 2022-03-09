@@ -139,3 +139,10 @@ func Login(c *gin.Context) {
 
 	c.JSON(http.StatusAccepted, gin.H{"msg": "login success", "user": userDb, "token": token})
 }
+
+// log out
+
+func Logout(c *gin.Context){
+	c.SetCookie("jwt", "", -1, "/", "localhost", false,false)
+	c.JSON(http.StatusAccepted, gin.H{"msg": "logout"})
+}
